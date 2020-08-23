@@ -1,0 +1,6 @@
+In the original project,  why dont you do the identity thing on the PK? Are guids better? 
+Should I have a ProductDataEntity and Product objects if the Identity@@ is generating the Ids (not guids?) I'm still confused why the two and mapping were necessary in the original project
+When would you ever use a patch versus just using a post to update a user or product, etc. 
+Still a little confused on what to make the return types on some of the repo calls (should it be 'Task' or 'Task<Product>' when adding a product for example?)
+What are the worst case consequences of not having calls to the repo be async? 
+Why was the response from the AddProductAsync in Product repo call '1'? I was expecting an int like 200 or 404.
