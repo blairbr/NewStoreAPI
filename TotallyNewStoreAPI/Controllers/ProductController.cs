@@ -26,25 +26,23 @@ namespace TotallyNewStoreAPI.Controllers
            
            return Ok(response);
 
-            //whats the point of mapping it again?//why were the ids varchars? also why dont you do the identity thing?
         }
 
         // POST: api/Product
         [HttpPost]
         public async Task<IActionResult> AddProduct(Product product) 
-        { //what shoudl the return type be here? like an async task? or void?
-            //at this point the Id in the product will be null. we'll see how that works
-            var response = await _productRepository.AddProductAsync(product);// why async?
+        {
+            var response = await _productRepository.AddProductAsync(product);
             return Ok(response);
         }
 
-        //when do you ever use a patch? i get that it's for updating but couldnt you just use a post?
 
         // GET: api/Product/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public async Task<IActionResult> GetProductById(int id)
         {
-            return "value";
+            var response = await _productRepository.GetProductByIdAsync(id);
+            return Ok(response);
         }
 
         // PUT: api/Product/5
